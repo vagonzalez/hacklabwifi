@@ -13,7 +13,7 @@ class Radacct(models.Model):
     radacctid = models.BigIntegerField(primary_key=True)
     acctsessionid = models.CharField(max_length=192)
     acctuniqueid = models.CharField(max_length=96)
-    username = models.CharField(max_length=192, primary_key=True)
+    username = models.CharField(max_length=192)
     groupname = models.CharField(max_length=192)
     realm = models.CharField(max_length=192, blank=True)
     nasipaddress = models.CharField(max_length=45)
