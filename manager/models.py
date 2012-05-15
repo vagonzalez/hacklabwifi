@@ -1,13 +1,25 @@
-# This is an auto-generated Django model module.
-# You'll have to do the following manually to clean this up:
-#     * Rearrange models' order
-#     * Make sure each model has one field with primary_key=True
-# Feel free to rename the models, but don't rename db_table values or field names.
-#
-# Also note: You'll have to insert the output of 'django-admin.py sqlcustom [appname]'
-# into your database.
-
 from django.db import models
+
+
+# http://wiki.freeradius.org/Operators
+REPLY_OPERATORS = (
+    ('=', '='),
+    (':=', ':='),
+    ('+=', '+='),
+)
+
+OPERATORS = REPLY_OPERATORS + (
+    ('==', '==' ),
+    ('!=', '!=' ),
+    ('>', '>' ),
+    ('>=', '>=' ),
+    ('<', '<' ),
+    ('<=', '<=' ),
+    ('=~', '=~' ),
+    ('!~', '!~' ),
+    ('=*', '=*' ),
+    ('!*', '!*' ),
+)
 
 class Radacct(models.Model):
     radacctid = models.BigIntegerField(primary_key=True)
@@ -44,7 +56,7 @@ class Radcheck(models.Model):
     id = models.IntegerField(primary_key=True)
     username = models.CharField(max_length=192)
     attribute = models.CharField(max_length=192)
-    op = models.CharField(max_length=6)
+    op = models.CharField(max_length=6, choices=OPERATORS)
     value = models.CharField(max_length=759)
 
     class Meta:
@@ -54,7 +66,7 @@ class Radgroupcheck(models.Model):
     id = models.IntegerField(primary_key=True)
     groupname = models.CharField(max_length=192)
     attribute = models.CharField(max_length=192)
-    op = models.CharField(max_length=6)
+    op = models.CharField(max_length=6, choices=OPERATORS)
     value = models.CharField(max_length=759)
 
     class Meta:
@@ -64,7 +76,7 @@ class Radgroupreply(models.Model):
     id = models.IntegerField(primary_key=True)
     groupname = models.CharField(max_length=192)
     attribute = models.CharField(max_length=192)
-    op = models.CharField(max_length=6)
+    op = models.CharField(max_length=6, choices=OPERATORS)
     value = models.CharField(max_length=759)
 
     class Meta:
@@ -84,7 +96,7 @@ class Radreply(models.Model):
     id = models.IntegerField(primary_key=True)
     username = models.CharField(max_length=192)
     attribute = models.CharField(max_length=192)
-    op = models.CharField(max_length=6)
+    op = models.CharField(max_length=6, choices=REPLY_OPERATORS)
     value = models.CharField(max_length=759)
 
     class Meta:
