@@ -6,8 +6,8 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'hackalbwifi.views.home', name='home'),
-    # url(r'^hackalbwifi/', include('hackalbwifi.foo.urls')),
+    # url(r'^$', 'hacklabwifi.views.home', name='home'),
+    # url(r'^hacklabwifi/', include('hacklabwifi.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
