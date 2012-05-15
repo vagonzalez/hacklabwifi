@@ -1,3 +1,6 @@
+import ldap
+from django_auth_ldap.config import LDAPSearch
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -18,10 +21,12 @@ DATABASES = {
     }
 }
 
-AUTH_LDAP_SERVER_URI = "ldap://bljak.org"
+AUTHENTICATION_BACKENDS = (
+    'django_auth_ldap.backend.LDAPBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
 
-import ldap
-from django_auth_ldap.config import LDAPSearch
+AUTH_LDAP_SERVER_URI = "ldap://bljak.org"
 
 AUTH_LDAP_BIND_DN = ""
 AUTH_LDAP_BIND_PASSWORD = ""
