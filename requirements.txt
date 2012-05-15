@@ -1,0 +1,5 @@
+Django==1.4
+MySQL-python
+django-auth-ldap==1.1
+django-crispy-forms
+
