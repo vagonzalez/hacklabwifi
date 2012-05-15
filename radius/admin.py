@@ -1,5 +1,5 @@
 from django.contrib import admin
-from manager.models import *
+from radius.models import *
 
 admin.site.register(Radacct)
 admin.site.register(Radcheck)
