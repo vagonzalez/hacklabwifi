@@ -50,6 +50,7 @@ class Radacct(models.Model):
     xascendsessionsvrkey = models.CharField(max_length=30, blank=True)
 
     class Meta:
+        verbose_name = 'accounting'
         db_table = u'radacct'
 
 class Radcheck(models.Model):
@@ -60,6 +61,7 @@ class Radcheck(models.Model):
     value = models.CharField(max_length=759)
 
     class Meta:
+        verbose_name = 'check'
         db_table = u'radcheck'
 
 class Radgroupcheck(models.Model):
@@ -70,6 +72,7 @@ class Radgroupcheck(models.Model):
     value = models.CharField(max_length=759)
 
     class Meta:
+        verbose_name = 'groupcheck'
         db_table = u'radgroupcheck'
 
 class Radgroupreply(models.Model):
@@ -80,6 +83,7 @@ class Radgroupreply(models.Model):
     value = models.CharField(max_length=759)
 
     class Meta:
+        verbose_name = 'groupreply'
         db_table = u'radgroupreply'
 
 class Radpostauth(models.Model):
@@ -90,6 +94,7 @@ class Radpostauth(models.Model):
     authdate = models.DateTimeField()
 
     class Meta:
+        verbose_name = 'postauth'
         db_table = u'radpostauth'
 
 class Radreply(models.Model):
@@ -100,6 +105,7 @@ class Radreply(models.Model):
     value = models.CharField(max_length=759)
 
     class Meta:
+        verbose_name = 'reply'
         db_table = u'radreply'
 
 class Radusergroup(models.Model):
@@ -108,5 +114,6 @@ class Radusergroup(models.Model):
     priority = models.IntegerField()
 
     class Meta:
+        verbose_name = 'usergroup'
         db_table = u'radusergroup'
 
